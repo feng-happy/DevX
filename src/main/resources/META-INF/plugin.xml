@@ -1,0 +1,52 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.plugin.devx.dex</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Dex</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="" url="https://www.yourcompany.com">czf</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Devx插件，加倍提高开发效率，功能如下
+    1. ************************************************************************
+    2.
+    3.
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action id="CallMethodPlugin.CallMethodOpenAction"
+                class="com.plugin.devx.action.callMethod.CallMethodOpenAction"
+                text="Call Method"
+                description="The method will be called"> <!--todo 设置icon-->
+
+            <keyboard-shortcut keymap="$default" first-keystroke="control shift D"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="CallMethodPlugin.CallMethodAgainOpenAction"
+                class="com.plugin.devx.action.callMethod.CallMethodAgainOpenAction"
+                text="Again Open AnyDoor"
+                description="The last method will be called"> <!--todo 设置icon-->
+            <keyboard-shortcut keymap="$default" first-keystroke="alt control shift S"/>
+            <add-to-group group-id="EditorPopupMenu"/>
+        </action>
+    </actions>
+</idea-plugin>
